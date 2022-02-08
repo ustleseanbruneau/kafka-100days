@@ -8,10 +8,17 @@ Download and setup Java 11 SDK
 Download & Extract the Kafka binaries from
     https://kafka.apache.org/downloads
 
-Try Kafka commands using bin/kafka-topics.sh
+tar -xvf kafka_*.tgz
+
+In Kafka root directory, try Kafka commands using 
+bin/kafka-topics.sh
 
 Edit PATH to include Kafka (in ~/.bashrc for example)
     PATH="$PATH:/your/path/to/your/kafka/bin"
+
+export PATH=~/.local/bin:$PATH
+export PATH=/home/fg/kafka_2.13-3.1.0/bin:$PATH
+
 
 Edit Zookeeper & Kafka configs using a text editor
     zookeeper.properties: dataDir=/your/path/to/data/zookeeper
