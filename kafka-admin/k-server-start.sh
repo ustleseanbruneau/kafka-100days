@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kafka-server-start.sh /home/sar/kafka_2.12-2.8.0/config/server.properties
+${HOME}/kafka_2.13-3.1.0/bin/kafka-server-start.sh ${HOME}/kafka_2.13-3.1.0/config/server.properties

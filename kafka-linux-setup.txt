@@ -16,6 +16,7 @@ bin/kafka-topics.sh
 Edit PATH to include Kafka (in ~/.bashrc for example)
     PATH="$PATH:/your/path/to/your/kafka/bin"
 
+## Add the following two lines...
 export PATH=~/.local/bin:$PATH
 export PATH=/home/fg/kafka_2.13-3.1.0/bin:$PATH
 

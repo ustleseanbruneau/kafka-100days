@@ -1,3 +1,3 @@
 #!/bin/bash
 
-zookeeper-server-start.sh /home/sar/kafka_2.12-2.8.0/config/zookeeper.properties
+${HOME}/kafka_2.13-3.1.0/bin/zookeeper-server-start.sh ${HOME}/kafka_2.13-3.1.0/config/zookeeper.properties
