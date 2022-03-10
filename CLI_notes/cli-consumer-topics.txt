@@ -1,0 +1,50 @@
+
+#Default:  Will only display new messages
+./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic
+
+#Process all messages from beginning
+./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning
+
+
+#Kafka Consumer Group
+./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-first-application
+
+##NOTE:  Will spread out messages to different members of consumer group
+
+#Example of consumer group will all messages from beginning
+
+##First command to run member of consumer group
+./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-second-application --from-beginning
+
+## First run will pull all messages
+## Stop first member of group my-second-application
+
+##Second command to run member of consumer group
+./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-second-application --from-beginning
+
+## Second run will not have any messages -> offset was changed by first member run
+
+##Stop second member of group
+##Add more messages to first_topic
+##Start third member of group
+## Only see new messages after second member of group was stopped
+
+
+##more information
+./kafka-consumer-groups.sh
+
+#List consumer groups
+./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+
+
+#Reset offsets
+./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to-earliest --execute --topic first_topic
+
+
+#Check offsets of consumer group members
+./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application 
+
+
+
+
+
