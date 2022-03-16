@@ -43,10 +43,10 @@ public class TwitterProducer {
 	 * 
 	 */
 	
-	String consumerKey = "LGkXk0p4vNpJvzNx4pFoSljZA";
-	String consumerSecret = "Gl8uRwMivoc7xyLZQgFmNbbfSiMDhlHY4Tg1N9iz87CNaw7ENE";
-	String token = "1405161538437197831-eBXHWo0UpJzFz8EGrqFsKK3ufBxKlH";
-	String secret = "QJYD0WVortpQNqE1y27atyx9MAhb2Vs2bla2I2s8WVpFw";
+	String consumerKey = "";
+	String consumerSecret = "";
+	String token = "";
+	String secret = "";
 	
 	// Optional: set up some followings and track terms
 	List<String> terms = Lists.newArrayList("kafka");	

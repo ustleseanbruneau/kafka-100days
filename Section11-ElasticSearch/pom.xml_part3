@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.leseanbruneau</groupId>
+  <artifactId>kafka-consumer-elasticsearch</artifactId>
+  <version>1.0</version>
+
+  <dependencies>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka-clients</artifactId>
+      <version>3.1.0</version>
+      <!-- <version>2.0.0</version> -->
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.36</version>
+      <!-- <version>1.7.25</version> -->
+    </dependency> 
+
+    <!-- https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-high-level-client -->
+    <dependency>
+      <groupId>org.elasticsearch.client</groupId>
+      <artifactId>elasticsearch-rest-high-level-client</artifactId>
+       <!-- <version>7.17.1</version> -->
+      <version>7.5.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <!-- <version>2.9.0</version> -->
+      <version>2.8.5</version> 
+    </dependency>
+
+
+  </dependencies>
+
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.1</version>
+			<configuration>
+				<source>11</source>    <!--or if Java 8 use <source>8</source> -->
+				<release>11</release>  <!--or if Java 8 use <release>8</release> -->
+			</configuration>
+		</plugin>
+		<plugin>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>3.2.0</version>
+			<configuration>
+				<source>11</source>    <!--or if Java 8 use <source>8</source> -->
+				<release>11</release>  <!--or if Java 8 use <release>8</release> -->
+				<archive>
+					<manifest>
+						<mainClass>com.github.leseanbruneau.kafka.tutorial1.ProducerDemo</mainClass>
+					</manifest>
+				</archive>
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
+
+</project>

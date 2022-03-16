@@ -1,0 +1,155 @@
+
+Use Cloud Provider
+
+https://bonsai.io/
+
+
+Create sandbox cluster
+
+Simple GET
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/
+{
+    "name": "ip-172-31-90-40",
+    "cluster_name": "elasticsearch",
+    "cluster_uuid": "ECOvIR6qQluA_Y1tYM-lBA",
+    "version": {
+        "number": "7.10.2",
+        "build_flavor": "oss",
+        "build_type": "tar",
+        "build_hash": "747e1cc71def077253878a59143c1f785afa92b9",
+        "build_date": "2021-01-13T00:42:12.435326Z",
+        "build_snapshot": false,
+        "lucene_version": "8.7.0",
+        "minimum_wire_compatibility_version": "6.8.0",
+        "minimum_index_compatibility_version": "6.0.0-beta1"
+    },
+    "tagline": "You Know, for Search"
+}
+
+
+GET health status
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/_cat/health?v
+
+epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
+1647366801 17:53:21  elasticsearch green           3         3      0   0    0    0        0             0                  -                100.0%
+
+GET indices
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/_cat/indices?v
+
+(no index)
+health status index uuid pri rep docs.count docs.deleted store.size pri.store.size
+
+
+PUT create twitter index 
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/twitter
+
+{
+    "acknowledged": true,
+    "shards_acknowledged": true,
+    "index": "twitter"
+}
+
+GET indices
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/_cat/indices?v
+
+(with one index already created - twitter)
+
+health status index                     uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+green  open   twitter 0jKOIKnfRAm9rSRkyBmuJA   1   1          0            0       416b           208b
+
+
+PUT - create message
+/twitter/tweets/1
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/twitter/tweets/2
+
+If using Postman, set Content-Type to application/json
+
+(message body)
+{
+    "course": "Kafka for Beginners",
+    "instructor": "Stephane Marek",
+    "module": "ElasticSearch"
+}
+
+(result)
+{
+  "_index": "twitter",
+  "_type": "tweets",
+  "_id": "1",
+  "_version": 1,
+  "result": "created",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 0,
+  "_primary_term": 1
+}
+
+
+GET - Retrieve message
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/twitter/tweets/1
+
+
+Result
+{
+    "_index": "twitter",
+    "_type": "tweets",
+    "_id": "1",
+    "_version": 1,
+    "_seq_no": 0,
+    "_primary_term": 1,
+    "found": true,
+    "_source": {
+        "course": "Kafka for Beginners",
+        "instructor": "Stephane Marek",
+        "module": "ElasticSearch"
+    }
+}
+
+
+DELETE - Delete message
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/twitter/tweets/2
+
+Result
+{
+    "_index": "twitter",
+    "_type": "tweets",
+    "_id": "2",
+    "_version": 2,
+    "result": "deleted",
+    "_shards": {
+        "total": 2,
+        "successful": 2,
+        "failed": 0
+    },
+    "_seq_no": 2,
+    "_primary_term": 1
+}
+
+
+
+DELETE - Delete index
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/twitter
+
+
+Result
+{
+    "acknowledged": true
+}
+
+
+GET indices
+https://mjey1o6ug5:pr4wemfnp9@kafka-intro-course-1907789141.us-east-1.bonsaisearch.net:443/_cat/indices?v
+
+(after index deleted - twitter)
+
+{
+    "acknowledged": true
+}
+
+
+
+
+

@@ -1,5 +1,36 @@
 
+Kafka Documentation
+https://kafka.apache.org/documentation
 
 
 https://developer.ibm.com/tutorials/developing-a-streams-processor-with-apache-kafka
+
+
+Java Twitter
+
+https://developer.twitter.com
+
+
+Google Search:
+github twitter java hbc
+
+https://github.com/twitter/hbc
+
+
+
+Elastic Search
+
+Documentation:
+https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+
+Manual install
+
+Google Search:
+elasticsearch install
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
+
+Use Cloud Provider
+
+https://bonsai.io/
 
