@@ -1,0 +1,42 @@
+
+Kafka Download
+https://kafka.apache.org/download
+
+extract tar file in home directory
+
+bin/kafka-topics.sh
+
+ADD PATH
+
+vi .bashrc
+
+at end of file, add
+
+PATH="$PATH:~/kafka_2.13-3.1.0/bin"
+
+new terminal, to run
+kafka-topics.sh
+
+
+### optional 
+Change log directories in config/zookeeper.properties and config/server.properties
+
+
+### List Kafka data files - if PATH is set
+ls data/kafka
+
+### check disk space
+du -sh ${KAFKA_ROOT_DIR}/data/kafka
+
+### create symbolic link directory
+ln -s ${KAFKA_ROOT_DIR} ${KAFKA_ALIAS_NAME}
+
+### update symbolic link directory
+ln -sfn ${SOURCE_DIR} ${NEW_ALIAS_NAME}
+
+
+### Extra - keytool
+keytool --printcert -v -file cert-signed
+
+
+

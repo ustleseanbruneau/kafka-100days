@@ -1,0 +1,14 @@
+
+Conductor-Kafka GUI
+  https://www.conduktor.io
+
+Conduktor software
+  https://www.conduktor.io/download
+
+Kafka Tool 2.0.7
+  https://kafkatool.com/download
+
+
+
+
+
