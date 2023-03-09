@@ -1,3 +1,6 @@
 #!/bin/bash
 
-${HOME}/kafka_2.13-3.1.0/bin/kafka-server-stop.sh 
+KAFKA_ROOT_DIR=opt/kafka_2.13-3.3.1
+
+#${HOME}/kafka_2.13-3.1.0/bin/kafka-server-stop.sh 
+${HOME}/${KAFKA_ROOT_DIR}/bin/kafka-server-stop.sh 
