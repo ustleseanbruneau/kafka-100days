@@ -1,0 +1,19 @@
+
+
+https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients/3.4.0
+
+https://mvnrepository.com/artifact/org.slf4j/slf4j-api/2.0.7
+
+https://mvnrepository.com/artifact/org.slf4j/slf4j-simple/2.0.7
+
+
+Course - Section 9 - Advanced Programming Examples
+
+https://www.conduktor.io/kafka/advanced-kafka-consumer-with-java/
+
+https://www.conduktor.io/kafka/java-consumer-rebalance-listener/
+
+https://www.conduktor.io/kafka/java-consumer-seek-and-assign/
+
+https://www.conduktor.io/kafka/java-consumer-in-threads/
+
