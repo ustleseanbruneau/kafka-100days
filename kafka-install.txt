@@ -1,6 +1,6 @@
 
 Kafka Download
-https://kafka.apache.org/download
+https://kafka.apache.org/downloads
 
 extract tar file in home directory
 
